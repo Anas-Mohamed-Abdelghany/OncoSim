@@ -1,7 +1,7 @@
 <p align="center">
-  <img src="https://github.com/user-attachments/assets/06cae128-9727-45d2-b91a-4d808c0fcd9e"
+  <img src="https://github.com/user-attachments/assets/7af74272-6bf8-4595-91af-5114e954a5bd"
        alt="OncoSim Logo"
-       width="150"/>
+       width="300"/>
 </p>
 
 <h1 align="center">OncoSim: A Technical Overview</h1>

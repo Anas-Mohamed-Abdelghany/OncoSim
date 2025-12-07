@@ -1,0 +1,27 @@
+# Core GUI Framework
+PyQt5==5.15.10
+qimage2ndarray==1.10
+
+# Scientific & Image Processing
+numpy==1.26.4
+scipy==1.13.0
+opencv-python==4.9.0.80
+scikit-image==0.23.2
+SimpleITK-SimpleElastix==2.3.1
+medpy==0.4.0
+
+# AI & Machine Learning
+# Note: TensorFlow is version-sensitive. 2.15 is compatible with Python 3.11.
+tensorflow==2.15.0
+keras==2.15.0  # Or 3.x if using Keras 3 specifically
+
+# Cloud AI & API Communication
+google-generativeai==0.6.0
+requests==2.31.0
+Pillow==10.3.0
+
+# PDF Generation
+reportlab==4.1.0
+
+# Optional for Plotting (Used in Heatmap Engine)
+matplotlib==3.8.4

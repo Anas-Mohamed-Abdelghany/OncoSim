@@ -1,5 +1,5 @@
 <p align="center">
-  <img src="[https://github.com/user-attachments/assets/06cae128-9727-45d2-b91a-4d808c0fcd9e](https://github.com/user-attachments/assets/af422be4-c172-4a16-808a-6dea6db20179)"
+  <img src="https://github.com/user-attachments/assets/06cae128-9727-45d2-b91a-4d808c0fcd9e"
        alt="OncoSim Logo"
        width="150"/>
 </p>

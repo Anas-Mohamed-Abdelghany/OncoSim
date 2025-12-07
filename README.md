@@ -20,11 +20,11 @@
 
 OncoSim is a desktop application developed to model the complex biophysical phenomena involved in laser-induced thermal therapy for oncological applications. The system integrates a multi-stage image processing pipeline for tumor segmentation with a real-time, finite-difference solver for the Pennes Bio-Heat Equation. An external Large Vision Model (LVM) provides high-level semantic analysis, including pathology classification and parameter estimation, which feeds into both the physics simulation and a real-time decision support system. A secondary PDE model based on the Fisher-KPP equation is included to simulate potential tumor growth and invasion dynamics.
 
-![OncoSim Screenshot](screenshot.png)
-
 ## Core Architectural Modules & Algorithms
 
 The application's architecture is modular, separating the GUI from the scientific engines. Each module addresses a specific task in the clinical workflow.
+
+![1](https://github.com/user-attachments/assets/36f6f6ac-5a88-48f1-ae68-a81d8ca0ddc8)
 
 ### 1. Image Segmentation (`segmentation.py`)
 
@@ -48,6 +48,8 @@ The application's architecture is modular, separating the GUI from the scientifi
     -   **Shape Descriptors:** **Eccentricity** is calculated from the eigenvalues of the region's covariance matrix, providing a measure of elongation (0 for a circle, 1 for a line).
 -   **Solved Problem:** Provides precise `(x, y)` coordinates for the laser targeting in the PDE solver and accurate size metrics for physics calculations.
 
+![4](https://github.com/user-attachments/assets/3fb1c3c3-2692-4045-8960-f9d049bd4015)
+
 ### 3. Cloud AI Analysis (`cloud_ai_engine.py`)
 
 -   **Objective:** Perform high-level radiological analysis that is beyond the scope of classical computer vision or a simple CNN.
@@ -59,6 +61,8 @@ The application's architecture is modular, separating the GUI from the scientifi
     -   `recommendation` (clinical action)
     -   `laser_parameters` (initial suggestion)
 -   **Solved Problem:** This offloads the complex tasks of classification and parameter estimation to a state-of-the-art model, removing the need for local trained models (like the VGG19) and providing richer, more detailed diagnostic text. A separate `FollowUpChatWorker` handles conversational context.
+
+![2](https://github.com/user-attachments/assets/938c231e-1023-4cfa-993e-efbb18784935)
 
 ### 4. Bio-Heat Simulation (`laser_physics.py`)
 
@@ -72,6 +76,8 @@ The application's architecture is modular, separating the GUI from the scientifi
         -   **Perfusion `(ωb*cb*(T - Ta))`**: The blood perfusion term `ωb(T)` is also dynamic, modeling vasodilation at moderate temperatures and coagulation (shutdown of blood flow) at higher temperatures.
         -   **Laser Source `(Ql)`**: A volumetric heat source is modeled as a 2D Gaussian distribution centered at the tumor centroid.
 -   **Solved Problem:** Replaced extremely slow, nested Python `for` loops with a high-performance vectorized solver, enabling a smooth, real-time animation of the heat map in the GUI.
+
+![3](https://github.com/user-attachments/assets/e01b8433-d22f-437e-b1a5-0773966e8691)
 
 ### 5. Tumor Growth Simulation (`tumor_growth_model.py`)
 

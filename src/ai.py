@@ -28,7 +28,7 @@ class UltimateChatApp:
 
     def load_api_key(self):
         """Loads the OpenRouter API key directly from the code."""
-        key = "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" # <--- PASTE YOUR OPENROUTER API KEY HERE
+        key = "--" # <--- PASTE YOUR OPENROUTER API KEY HERE
         
         if not key or "YourOpenRouterAPIKeyHere" in key:
             messagebox.showerror("API Key Not Set", "Please edit the script and set your OpenRouter key.")
@@ -177,4 +177,5 @@ class UltimateChatApp:
 if __name__ == "__main__":
     root = tk.Tk()
     app = UltimateChatApp(root)
+
     root.mainloop()
